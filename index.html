@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title >Hecmocer | Pokemon Brawl</title >
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <meta name="theme-color" content="#ffffff">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145912087-1"></script>
@@ -13,7 +17,6 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'UA-145912087-1');
     </script>
 </head>
@@ -102,7 +105,9 @@
         }
 
         #step3[state=shown] {
-            background-color: white;
+            background: linear-gradient(to right, rgba(255,238,233,1) 50%,rgba(227,236,212,1) 50%);
+            height: 100vh;
+            width: 100vw;
             opacity: 1;
             transition: opacity var(--hidingDelay);
             position: absolute;
@@ -110,7 +115,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            left: calc(50vw - 500px);
         }
 
         #how-to-play-instructions {
@@ -347,6 +351,7 @@
             width: 1000px;
             height: 100vh;
             flex-wrap: wrap;
+            background-color: white;
         }
 
         .card-rotable {
@@ -823,7 +828,6 @@
     </div>
 
     <script>
-
         const pokemons = [
             {
             "id": 1,

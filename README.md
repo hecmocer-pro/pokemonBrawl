@@ -66,10 +66,11 @@ defender.hp = Math.round((defender.hp - dmg))
 ```
 
 # Techy stuff
+- Website made just of HTML, JS and CSS
+- Favicon generated thanks to [https://realfavicongenerator.net/]
 - Pokémon landing image in base64
 - PokeApi data downloaded, formatted and pasted right away in JS
 - Pokémon sprites and type images are downloaded in runtime
-- Website made just of HTML, JS and CSS
 - Custom SVG made in Sketch for the winner animation
 - Just using 3 external resources: PokéApi, GoogleFonts and GoogleAnalytics
 
