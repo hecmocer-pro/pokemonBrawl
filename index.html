@@ -4295,11 +4295,13 @@
                 /* Button to go to next step, except for the last one and the one before the brawl*/
                 if (step === 2) {
                     document.querySelector(`#step${step}-button`).addEventListener('click', function () {
+                        sendGoogleAnalyticsEvent(`step${step} button`, 'step navigation', `${step}`)
                         shuffleBothDecks()
                         _goToNextStep()
                     })
                 } else if (step !== 3) {
                     document.querySelector(`#step${step}-button`).addEventListener('click', function () {
+                        sendGoogleAnalyticsEvent(`step${step} button`, 'step navigation', `${step}`)
                         _goToNextStep()
                     })
                 }
@@ -4579,10 +4581,12 @@
             if (redDeck.length === 0) {
                 resetBrawl()
                 declareWinner('Green')
+                sendGoogleAnalyticsEvent(`checkWinners`, 'A player wins', `Green Wins!`)
                 return true
             } else if (greenDeck.length === 0) {
                 resetBrawl()
                 declareWinner('Red')
+                sendGoogleAnalyticsEvent(`checkWinners`, 'A player wins', `Red Wins!`)
                 return true
             } else {
                 document.querySelector('#step3-button').setAttribute('hidden', 'true')
@@ -4780,6 +4784,15 @@
             return idAndValue.sort((a,b) => { return a.value >= b.value ? 1 : -1})
         }
 
+        function sendGoogleAnalyticsEvent(category, action, label) {
+            ga('send', {
+                hitType: 'event',
+                eventCategory: category,
+                eventAction: action,
+                eventLabel: label
+            });
+        }
+
 
         (function initPokemonCards() {
             Array.from(document.querySelectorAll('.picking-cardcontainer')).forEach(function (insertionPoint) {
@@ -4790,29 +4803,27 @@
         })();
 
         (function initListeners() {
-            Array.from(document.querySelectorAll('.card-rotable')).forEach(function (node) {
-                node.addEventListener('click', function () {
-                    node.classList.toggle('rotate')
-                })
-            })
-
             Array.from(document.querySelectorAll('#step1 .card-selectable')).forEach(function (node) {
                 node.addEventListener('click', function () {
+                    sendGoogleAnalyticsEvent(`Red card`, 'brawler selection', `${node.dataset.id}`)
                     pickRedBrawler(node)
                 })
             })
 
             Array.from(document.querySelectorAll('#step2 .card-selectable:not(.locked)')).forEach(function (node) {
                 node.addEventListener('click', function () {
+                    sendGoogleAnalyticsEvent(`Green card`, 'brawler selection', `${node.dataset.id}`)
                     pickGreenBrawler(node)
                 })
             })
 
             document.querySelector('#how-to-play-button').addEventListener('click', function() {
+                sendGoogleAnalyticsEvent(`How to play`, 'toggle visibility from', `${document.querySelector('#how-to-play-instructions').getAttribute('state')}`)
                 _toggleVisibility('#how-to-play-instructions')
             })
 
             document.querySelector('#step3-button').addEventListener('click', function() {
+                sendGoogleAnalyticsEvent(`step3-button`, 'Brawl', `Red: ${redDeck.length} vs Green: ${greenDeck.length}`)
                 document.querySelector('#step3-button').setAttribute('disabled', true)
                 rotateFirstCard('#redDeck')
                 rotateFirstCard('#greenDeck')
@@ -4828,9 +4839,11 @@
             })
 
             document.querySelector('#step3-button-reset').addEventListener('click', function() {
+                sendGoogleAnalyticsEvent(`step3-button-reset`, 'Reload', `Reload window after winning // Red: ${redDeck.length} vs Green: ${greenDeck.length}`)
                 location.reload();
             })
             document.querySelector('#step3-button-clean').addEventListener('click', function() {
+                sendGoogleAnalyticsEvent(`step3-button-clean`, 'Clean', `Red: ${redDeck.length} vs Green: ${greenDeck.length}`)
                 document.querySelector('#step3-button').removeAttribute('hidden')
                 document.querySelector('#step3-button-clean').setAttribute('hidden', true)
                 resetBrawl()
@@ -4840,9 +4853,11 @@
             })
 
             document.querySelector('#step2-button-AI').addEventListener('click', function() {
+                sendGoogleAnalyticsEvent(`#step2-button-AI`, 'Random AI', `Choose random AI`)
                 RandomAIChoosesBrawlers()
             })
             document.querySelector('#step2-button-AI2').addEventListener('click', function() {
+                sendGoogleAnalyticsEvent(`#step2-button-AI2`, 'Ash', `Choose intelligent AI`)
                 HardAIChoosesBrawlers()
             })
         })();
