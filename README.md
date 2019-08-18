@@ -67,12 +67,12 @@ defender.hp = Math.round((defender.hp - dmg))
 
 # Techy stuff
 - Website made just of HTML, JS and CSS
-- Favicon generated thanks to [https://realfavicongenerator.net/]
+- Favicon generated thanks to [realfavicongenerator.net](https://realfavicongenerator.net/)
 - Pokémon landing image in base64
 - PokeApi data downloaded, formatted and pasted right away in JS
 - Pokémon sprites and type images are downloaded in runtime
 - Custom SVG made in Sketch for the winner animation
-- Just using 3 external resources: PokéApi, GoogleFonts and GoogleAnalytics
+- Just using 3 external resources: [PokéApi](https://pokeapi.co/), [GoogleFonts](https://fonts.google.com/) and [GoogleAnalytics](https://en.wikipedia.org/wiki/Google_Analytics)
 
 In case you want to simulate a brawl, just paste this on the DevTools
 
