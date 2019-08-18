@@ -1,12 +1,12 @@
-# pokemonBrawl
-The pokemon are meeting tonight to find out the best brawler composition.
+# Pokémon Brawl
+The pokémon are meeting tonight to find out the best brawler composition.
 
-Help them by choosing two teams of 6 pokemon and find out who is the last one standing!
+Help them by choosing two teams of 6 pokémon and find out who is the last one standing!
 
 # How to play
-- Pick a team of 6 pokemon
-- Pick another team of 6 pokemon or let the AI decide
-- Watch them fight and see who is the last pokemon standing
+- Pick a team of 6 pokémon
+- Pick another team of 6 pokémon or let the AI decide
+- Watch them fight and see who is the last pokémon standing
 
 # Why did you do this?
 I was just wandering the internet coding community and I found motivation in [July's Codepen challenge](https://codepen.io/challenges/2019/july/3).
@@ -15,7 +15,7 @@ Down at the bottom where resources are recommended, they mentioned [PokéAPI](ht
 
 So after brainstorming for a week I started coding some kind of little card videogame using this API and just plain vanilla HTML, CSS and Javascript.
 
-After three weeks and moving out in between, I released the first version of the videogame on July 18th.
+After three weeks and moving out in between, I released the first version of the videogame on July 18th 2019.
 
 It featured:
 - How to play instructions
@@ -27,16 +27,16 @@ It featured:
 - Winner SVG and 🎉 animation
 
 # Ash
-So if you come here wondering how Ash thinks before picking the right pokemons to beat you, here is what is happening on his mind
+So if you come here wondering how Ash thinks before picking the right pokémons to beat you, here is what is happening on his mind.
 
-He asigns a value to each remaining pokemon considering its stats, that is Attack, Defense, HP, Speed and types. Then he orders all the pokemons based on that value, and picks the strongest 6.
+He asigns a value to each remaining pokémon considering its stats, that is Attack, Defense, HP, Speed and types. Then he orders all the pokémons based on that value, and picks the strongest 6.
 
-In order to crush you, he focuses on finding the pokemons with the right types. He calculates the _average_ type multiplier of every pokemon left against the pokemons on your team. This average is added to the previous calculation.
+In order to crush you, he focuses on finding the pokémons with the right types. He calculates the _average_ type multiplier of every pokémon left against the pokémons on your team. This average is added to the previous calculation.
 
-That is why if you have a FIRE type team, Ash is smart enough to pick mainly water pokemons
+That is why if you have a FIRE type team, Ash is smart enough to pick mainly water pokémons.
 
 # Brawling algorithm
-First the speed is considered to find the pokemon that will deal dmg first.
+First the speed is considered to find the pokémon that will deal dmg first.
 
 The a multiplier is calculated based on the attacker and defender types.
 
@@ -46,7 +46,7 @@ Finally, it is basically just
 defender.hp = defender.hp - ((attacker.attack - defender.defense) * multiplier)
 ```
 
-But when both pokemons are tied, they are given a high chance to at least deal a little damage and finish their opponent
+But when both pokémons are tied, they are given a high chance to at least deal a little damage and finish their opponent
 
 ```Javascript 
 if (attacker.attack - defender.defense <= -40) {
@@ -66,9 +66,9 @@ defender.hp = Math.round((defender.hp - dmg))
 ```
 
 # Techy stuff
-- Pokemon landing image in base64
+- Pokémon landing image in base64
 - PokeApi data downloaded, formatted and pasted right away in JS
-- Pokemon sprites and type images are downloaded in runtime
+- Pokémon sprites and type images are downloaded in runtime
 - Website made just of HTML, JS and CSS
 - Custom SVG made in Sketch for the winner animation
 - Just using 3 external resources: PokéApi, GoogleFonts and GoogleAnalytics
@@ -95,8 +95,8 @@ In case you want to simulate a brawl, just paste this on the DevTools
     })();
 ```
 
-In case you want to get the pokemons ordered by its _Ash value_, just call this function with any array of pokemons. For instance
+In case you want to get the pokémons ordered by its _Ash value_, just call this function with any array of pokémons. For instance
 
 ```Javascript
-    orderPokemonsByExpectedValue(pokemons)
+    orderPokémonsByExpectedValue(pokémons)
 ```
