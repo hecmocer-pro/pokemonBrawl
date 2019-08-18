@@ -76,27 +76,27 @@ defender.hp = Math.round((defender.hp - dmg))
 In case you want to simulate a brawl, just paste this on the DevTools
 
 ```Javascript
-    (function simulate() {
-        document.querySelector('#step0-button').click();
-        document.querySelector('#step1 [data-id="1"]').click();
-        document.querySelector('#step1 [data-id="2"]').click();
-        document.querySelector('#step1 [data-id="3"]').click();
-        document.querySelector('#step1 [data-id="4"]').click();
-        document.querySelector('#step1 [data-id="5"]').click();
-        document.querySelector('#step1 [data-id="6"]').click();
-        document.querySelector('#step1-button').click();
-        document.querySelector('#step2 [data-id="7"]').click();
-        document.querySelector('#step2 [data-id="8"]').click();
-        document.querySelector('#step2 [data-id="9"]').click();
-        document.querySelector('#step2 [data-id="10"]').click();
-        document.querySelector('#step2 [data-id="11"]').click();
-        document.querySelector('#step2 [data-id="12"]').click();
-        document.querySelector('#step2-button').click();
-    })();
+(function simulate() {
+    document.querySelector('#step0-button').click();
+    document.querySelector('#step1 [data-id="1"]').click();
+    document.querySelector('#step1 [data-id="2"]').click();
+    document.querySelector('#step1 [data-id="3"]').click();
+    document.querySelector('#step1 [data-id="4"]').click();
+    document.querySelector('#step1 [data-id="5"]').click();
+    document.querySelector('#step1 [data-id="6"]').click();
+    document.querySelector('#step1-button').click();
+    document.querySelector('#step2 [data-id="7"]').click();
+    document.querySelector('#step2 [data-id="8"]').click();
+    document.querySelector('#step2 [data-id="9"]').click();
+    document.querySelector('#step2 [data-id="10"]').click();
+    document.querySelector('#step2 [data-id="11"]').click();
+    document.querySelector('#step2 [data-id="12"]').click();
+    document.querySelector('#step2-button').click();
+})();
 ```
 
 In case you want to get the pokémons ordered by its _Ash value_, just call this function with any array of pokémons. For instance
 
 ```Javascript
-    orderPokémonsByExpectedValue(pokémons)
+orderPokemonsByExpectedValue(pokemons)
 ```
