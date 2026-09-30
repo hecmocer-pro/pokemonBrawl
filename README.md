@@ -1,6 +1,6 @@
 # [Pokémon Brawl](https://hecmocer-pro.github.io/pokemonBrawl/)
 
-A vanilla JavaScript Pokémon battle simulator where players build teams and watch them fight.
+[2019] A vanilla JavaScript Pokémon battle simulator where players build teams and watch them fight.
 
 The pokémon are meeting tonight to find out the best brawler composition.
 
